@@ -77,7 +77,7 @@ trait SearchesRelations
      * @param  string  $search
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    protected static function applySearch($query, $search)
+    protected static function applySearch(\Illuminate\Contracts\Database\Eloquent\Builder $query, string $search): Builder
     {
         return $query->where(function ($query) use ($search) {
             parent::applySearch($query, $search);
